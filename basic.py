@@ -1,5 +1,3 @@
-#pylint:disable=no-member
-
 import cv2 as cv
 
 # Read in an image
