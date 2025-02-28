@@ -8,7 +8,7 @@ import cv2 as cv
 # cv.waitKey(0)
 
 # Reading Videos
-capture = cv.VideoCapture('Videos/dog.mp4')
+capture = cv.VideoCapture('../Resources/Videos/dog.mp4')
 
 while True:
     isTrue, frame = capture.read()
