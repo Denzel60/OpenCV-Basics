@@ -1,5 +1,5 @@
 import cv2 as cv
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 img = cv.imread('../Resources/Photos/cats.jpg')
@@ -17,6 +17,7 @@ cv.imshow('Mask', masked)
 
 # GRayscale histogram
 # gray_hist = cv.calcHist([gray], [0], mask, [256], [0,256] )
+# gray_hist = cv.calcHist([gray], [0], None, [256], [0,256] )
 
 # plt.figure()
 # plt.title('Grayscale Histogram')
@@ -26,18 +27,20 @@ cv.imshow('Mask', masked)
 # plt.xlim([0,256])
 # plt.show()
 
-# Colour Histogram
 
-# plt.figure()
-# plt.title('Colour Histogram')
-# plt.xlabel('Bins')
-# plt.ylabel('# of pixels')
+# Colour Histogram
+plt.figure()
+plt.title('Colour Histogram')
+plt.xlabel('Bins')
+plt.ylabel('# of pixels')
+
 colors = ('b', 'g', 'r')
 for i,col in enumerate(colors):
     hist = cv.calcHist([img], [i], mask, [256], [0,256])
-#     plt.plot(hist, color=col)
-#     plt.xlim([0,256])
+    # hist = cv.calcHist([img], [i], None, [256], [0,256])
+    plt.plot(hist, color=col)
+    plt.xlim([0,256])
 
-# plt.show()
+plt.show()
 
 cv.waitKey(0)
